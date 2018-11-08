@@ -1,0 +1,90 @@
+import React from 'react';
+import { StyleSheet, Text, View,Button } from 'react-native';
+import Home from './Home'
+
+export default class App extends React.Component {
+ constructor(props){
+super(props)
+this.state={age:0,
+  fullname:'วรเชฏฐ์  จันทร์แจ่ม'
+
+}
+ }
+  render() {
+    const{age,fullname} = this.state;
+    return (
+      <View style={styles.container}>
+        <Button 
+        title="Click"
+        onPress={()=>{
+          alert('Hello');
+        }}
+        />
+
+  
+     <Home 
+     fullname ='วรเชฏฐ์ จันทร์แจ่ม'
+     age = {31}
+     />
+
+       <Text>{age}</Text>
+    <Text>{fullname}</Text>
+
+
+<Button
+title='เพิ่มอายุ'
+onPress={this.incrementAge}
+/>
+
+<Button
+title='ลดอายุ'
+onPress={this.decreamentAge}
+/>
+
+
+      </View>
+    );
+  }
+}
+
+incrementAge = () =>{
+alert('ค่า -');
+}
+
+decreamentAge = () => {
+  alert('ค่า -');
+}
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection:'row-reverse'
+  },
+  viewstyle :{
+    height:100,
+    width:100,
+    backgroundColor:'red'
+  },
+    box1:{
+      flex:2,
+      width:100,
+      height:100,
+      backgroundColor:'blue'
+    },
+    box2:{
+      flex:2,
+      width:100,
+      height:100,
+      backgroundColor:'yellow'
+    },
+    box3:{
+      flex:1,
+      width:100,
+      height:100,
+      backgroundColor:'green'
+    }
+});
